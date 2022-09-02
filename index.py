@@ -5,3 +5,6 @@ m = open("movies.txt","a+")
 
 tvList = t.read()
 tvList = list(tvList.split(","))
+
+movieList = t.read()
+movieList = list(tvList.split(","))
