@@ -3,13 +3,16 @@ from random import randint
 
 #importing data
 t = open("tvShow.txt", "a+")
+t = open("tvShow.txt","r+")
 m = open("movies.txt","a+")
+m = open("movies.txt","r+")
+
 
 #importing data into list
 tvList = t.read()
 tvList = list(tvList.split(","))
 
-movieList = t.read()
+movieList = m.read()
 movieList = list(movieList.split(","))
 
 #menu
@@ -20,7 +23,7 @@ def menu():
     print("2)\tChoose a Random Movie")
     print("3)\tAdd a TV Show to Watch")
     print("4)\tAdd a Movie to Watch")
-    print("5)\tSaved Movie ad TV shows")
+    print("5)\tSaved Movies and TV shows")
     print("6)\tExit Program")
 
 def chooseFromMenu():
@@ -50,7 +53,7 @@ def addtoList(choice):
     if choice == 4:
         addingList = input("What do you want to add to list(split movies using ','):")
         m.write(addingList)
-        movieList.append()
+        movieList.append(addingList.split(","))
     else:
         return None
 
@@ -72,10 +75,16 @@ def printLists(choice):
         for index in movieList:
             print(index)
 
-choice = chooseFromMenu()
-randNum = randomNum(choice)
-addtoList(choice)
-printChoice(choice,randNum)
-printLists(choice)
+def main():
+#main method
+    choice = chooseFromMenu()
+    while  choice != 6:
+        randNum = randomNum(choice)
+        addtoList(choice)
+        printChoice(choice,randNum)
+        printLists(choice)
+        choice = chooseFromMenu()
+           
+main()
 
 
