@@ -50,11 +50,11 @@ def addtoList(choice):
     #adds to data file
     if choice == 3:
         addingList = input("What do you want to add to list(split TV shows using ','):")
-        t.write(addingList)
+        t.write(","+addingList)
         tvList.append(addingList.split(","))
     if choice == 4:
         addingList = input("What do you want to add to list(split movies using ','):")
-        m.write(addingList)
+        m.write(","+addingList)
         movieList.append(addingList.split(","))
     else:
         return None
