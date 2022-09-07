@@ -9,11 +9,13 @@ m = open("movies.txt","r+")
 
 
 #importing data into list
-tvList = t.read()
-tvList = list(tvList.split(","))
+tvList = []
+tempList = t.read()
+tvList = list(tempList.split(","))
 
-movieList = m.read()
-movieList = list(movieList.split(","))
+movieList = []
+tempList = m.read()
+movieList = list(tempList.split(","))
 
 #menu
 def menu():
