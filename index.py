@@ -27,7 +27,7 @@ def load_list_from_file(filename):
         raise "file name cannot be null or empty"
     
     contents = []
-    with open(filename, "r+") as file:
+    with open(filename, "a+") as file:
         lines = file.readlines()
         for line in lines:
             for item in line.strip().split(","):
