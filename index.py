@@ -27,7 +27,7 @@ def load_list_from_file(filename):
         raise "file name cannot be null or empty"
     
     contents = []
-    with open(filename, "a+") as file:
+    with open(filename, "r+") as file:
         lines = file.readlines()
         for line in lines:
             for item in line.strip().split(","):
@@ -100,9 +100,6 @@ def show_all():
     for movie in movies:
         print(movie)
         
-    
-
-
 def add_to_list(item_type):
     list_type = "TV shows"
     filename = TV_SHOWS_FILENAME
